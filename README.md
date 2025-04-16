@@ -1,6 +1,6 @@
 # Simple Sticky Notes (React + Vite) 📌✨
 
-## Try the Live Demo - [Demo Link](https://sticky-notes.vercel.com/)
+## Try the Live Demo - [Demo Link](https://sticky-notes-lyart.vercel.app/)
 
 A simple, intuitive, and visually appealing sticky note application built with React and Vite. Allows users to create, drag, edit (with word limits), and delete notes on a digital canvas, with persistence via local storage and a dark/light theme toggle.
 
