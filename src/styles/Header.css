@@ -1,0 +1,91 @@
+/* src/styles/Header.css */
+.app-header {
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Make header sticky */
+  top: 0;
+  z-index: 100; /* Ensure header stays on top */
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-content {
+  max-width: 1200px; /* Limit content width */
+  margin: 0 auto; /* Center content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 1rem; /* Add gap between items if they wrap */
+}
+
+.title-credits {
+  text-align: left; /* Align text left by default */
+}
+
+.app-header h1 {
+  margin: 0 0 0.1rem 0; /* Small bottom margin */
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.creator-credit {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.theme-toggle-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid var(--button-border);
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-radius: 20px; /* More rounded */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.2s ease;
+  display: flex; /* Align icon and text */
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-button .toggle-text {
+    display: inline; /* Show text by default */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .app-header {
+    padding: 0.8rem 1rem;
+  }
+  .header-content {
+     flex-direction: column; /* Stack items vertically */
+     align-items: center; /* Center align */
+     text-align: center;
+  }
+  .title-credits {
+    text-align: center; /* Center text on small screens */
+    margin-bottom: 0.5rem; /* Add space below credits */
+  }
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+   .theme-toggle-button .toggle-text {
+       /* Optionally hide text on very small screens */
+       /* display: none;  */
+   }
+   .theme-toggle-button {
+       padding: 0.4rem 0.8rem; /* Adjust padding */
+   }
+}
+
+/* Created by Ram Bapat, www.linkedin.com/in/ram-bapat-barrsum-diamos */

@@ -1,0 +1,99 @@
+/* src/styles/StickyNote.css */
+.sticky-note {
+    /* background-color removed - now set via inline style */
+    color: var(--note-text);
+    padding: 0.5rem; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 220px;
+    height: 200px;
+    position: absolute; /* Required for react-draggable */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--note-border);
+    transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    overflow: hidden; /* Prevent content overflow */
+    cursor: grab; /* Indicate draggable */
+    user-select: none; /* Prevent text selection during drag */
+  }
+  
+  .sticky-note:active, .sticky-note:focus-within {
+      cursor: grabbing;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      z-index: 10; /* Bring active/focused note to front */
+      border-color: var(--note-border-light);
+  }
+  
+  .sticky-note-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.2rem 0.3rem;
+    min-height: 25px; /* Ensure header has some height */
+    cursor: grab; /* Make header the drag handle */
+    flex-shrink: 0; /* Prevent header from shrinking */
+    /* Optional: subtle background for handle */
+    /* background-color: rgba(0, 0, 0, 0.03); */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
+  }
+  
+  .delete-note-button {
+    background: none;
+    border: none;
+    color: var(--delete-button-color);
+    cursor: pointer;
+    font-size: 1.1rem; /* Slightly larger icon */
+    padding: 0.5rem;  /* Increased padding for easier tapping */
+    line-height: 1;   /* Keep line height tight */
+    opacity: 0.6;     /* Slightly less visible initially */
+    transition: opacity 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+    border-radius: 50%; /* Make the tappable area round */
+    margin-left: auto; /* Push button to the far right */
+    user-select: none; /* Prevent selection */
+    z-index: 1; /* Ensure button is clickable */
+  }
+  
+  .sticky-note:hover .delete-note-button,
+  .sticky-note:focus-within .delete-note-button {
+      opacity: 0.8; /* Show more on hover/focus */
+  }
+  
+  .delete-note-button:hover {
+    opacity: 1;
+    color: var(--delete-button-hover-color);
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle hover background */
+    transform: scale(1.1);
+  }
+  
+  /* Add a specific active state for better feedback */
+  .delete-note-button:active {
+      background-color: rgba(0, 0, 0, 0.2);
+      transform: scale(0.95);
+  }
+  
+  .sticky-note-textarea {
+    flex-grow: 1; /* Take remaining space */
+    background-color: transparent; /* Inherit note background */
+    color: var(--note-text);
+    border: none;
+    padding: 0.5rem; /* Padding inside textarea */
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    resize: none; /* Disable resizing handle */
+    outline: none; /* Remove focus outline */
+    width: 100%;
+    box-sizing: border-box;
+    cursor: text; /* Text cursor when over text area */
+    user-select: text; /* Allow text selection inside textarea */
+    overflow-y: auto; /* Allow scrolling if text exceeds height */
+  }
+  
+  /* Style placeholder text */
+  .sticky-note-textarea::placeholder {
+      color: var(--placeholder-text);
+      opacity: 0.8;
+      font-style: italic;
+  }
+
+  /* Created by Ram Bapat, www.linkedin.com/in/ram-bapat-barrsum-diamos */
